@@ -7,6 +7,7 @@ import {FORM_PROVIDERS} from 'angular2/common';
 
 import {RouterActive} from './directives/router-active';
 import {Home} from './home/home';
+import {FormBuilder} from './FormBuilder/FormBuilder';//new module of Wix
 
 /*
  * App Component
@@ -46,6 +47,9 @@ import {Home} from './home/home';
           <li router-active>
             <a [routerLink]=" ['About'] ">About</a>
           </li>
+          <li router-active>
+            <a [routerLink]=" ['FormBuilder'] ">Form Builder</a>
+          </li>
         </ul>
       </nav>
     </header>
@@ -65,6 +69,7 @@ import {Home} from './home/home';
 @RouteConfig([
   { path: '/', component: Home, name: 'Index' },
   { path: '/home', component: Home, name: 'Home' },
+  { path: '/FormBuilder', component: FormBuilder, name: 'FormBuilder' },
   // Async load a component using Webpack's require with es6-promise-loader
   { path: '/about', loader: () => require('./about/about')('About'), name: 'About' },
   { path: '/**', redirectTo: ['Index'] }
