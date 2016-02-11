@@ -10,6 +10,7 @@ import {Home} from './home/home';
 import {FormBuilder} from './FormBuilder/FormBuilder';//new module of Wix
 import {Tutorial} from './Tutorial/Tutorial';//Need to study the basic
 import {TodoApp} from './TodoApp/TodoApp';//Need to study the basic
+import {TabAppOfficial} from './TabAppOfficial/TabAppOfficial';//Need to study the basic
 
 /*
  * App Component
@@ -58,6 +59,9 @@ import {TodoApp} from './TodoApp/TodoApp';//Need to study the basic
           <li router-active>
             <a [routerLink]=" ['TodoApp'] ">Todo</a>
           </li>
+          <li router-active>
+            <a [routerLink]=" ['TabAppOfficial'] ">TabAppOfficial</a>
+          </li>
         </ul>
       </nav>
     </header>
@@ -80,6 +84,7 @@ import {TodoApp} from './TodoApp/TodoApp';//Need to study the basic
   { path: '/FormBuilder', component: FormBuilder, name: 'FormBuilder' },
   { path: '/TodoApp', component: TodoApp, name: 'TodoApp' },//angular official tutorial
   { path: '/Tutorial', component: Tutorial, name: 'Tutorial' },
+  { path: '/TabAppOfficial', component: TabAppOfficial, name: 'TabAppOfficial' },
   // Async load a component using Webpack's require with es6-promise-loader
   { path: '/about', loader: () => require('./about/about')('About'), name: 'About' },
   { path: '/**', redirectTo: ['Index'] }
