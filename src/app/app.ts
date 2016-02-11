@@ -8,6 +8,8 @@ import {FORM_PROVIDERS} from 'angular2/common';
 import {RouterActive} from './directives/router-active';
 import {Home} from './home/home';
 import {FormBuilder} from './FormBuilder/FormBuilder';//new module of Wix
+import {Tutorial} from './Tutorial/Tutorial';//Need to study the basic
+import {TodoApp} from './TodoApp/TodoApp';//Need to study the basic
 
 /*
  * App Component
@@ -50,6 +52,12 @@ import {FormBuilder} from './FormBuilder/FormBuilder';//new module of Wix
           <li router-active>
             <a [routerLink]=" ['FormBuilder'] ">Form Builder</a>
           </li>
+          <li router-active>
+            <a [routerLink]=" ['Tutorial'] ">Tutorial</a>
+          </li>
+          <li router-active>
+            <a [routerLink]=" ['TodoApp'] ">Todo</a>
+          </li>
         </ul>
       </nav>
     </header>
@@ -70,6 +78,8 @@ import {FormBuilder} from './FormBuilder/FormBuilder';//new module of Wix
   { path: '/', component: Home, name: 'Index' },
   { path: '/home', component: Home, name: 'Home' },
   { path: '/FormBuilder', component: FormBuilder, name: 'FormBuilder' },
+  { path: '/TodoApp', component: TodoApp, name: 'TodoApp' },//angular official tutorial
+  { path: '/Tutorial', component: Tutorial, name: 'Tutorial' },
   // Async load a component using Webpack's require with es6-promise-loader
   { path: '/about', loader: () => require('./about/about')('About'), name: 'About' },
   { path: '/**', redirectTo: ['Index'] }

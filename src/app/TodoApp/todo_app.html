@@ -1,0 +1,10 @@
+<!--data binding-->
+
+<div class="main_content">
+    <h3>official from AngularJS Tus -TODO app</h3>
+    <h2>Todo</h2>
+    <span>{{remaining}} of {{todos.length}} remaining</span>
+    [ <a (click)="archive()">archive</a> ]
+    <todo-list [todos]="todos"></todo-list>
+    <todo-form (newTask)="addTask($event)"></todo-form>
+</div>

@@ -1,0 +1,32 @@
+<!--data binding-->
+
+<div class="main_content">
+    <h3>official from AngularJS Tus</h3>
+    <div class="event_handler">
+        <label>Name:</label>
+        <!-- data-bind to the input element; store value in yourName -->
+        <input type="text" [(ngModel)]="yourName" placeholder="Enter a name here">
+        <hr>
+        <!-- conditionally display `yourName` -->
+        <h1 [hidden]="!yourName">Hello {{yourName}}!</h1>
+
+    </div>
+    <hr>
+    <hr>
+    <hr>
+
+    <h3>event handler simple example</h3>
+    <!--event handler-->
+    <div>
+        My Name is {{name}}
+    </div>
+    <div>
+        <input #newname type="text"/>
+        <button (click)="changeName(newname.value)" [disabled]="newname.value=='David'">Change Name</button>
+    </div>
+
+    <hr>
+    <hr>
+    <hr>
+
+</div>
