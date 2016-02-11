@@ -1,7 +1,7 @@
 /*
  * Angular 2 decorators and services
  */
-import {Component} from 'angular2/core';
+import {Component,ViewEncapsulation} from 'angular2/core';
 import {RouteConfig, Router, ROUTER_DIRECTIVES} from 'angular2/router';
 import {FORM_PROVIDERS} from 'angular2/common';
 
@@ -12,6 +12,10 @@ import {Tutorial} from './Tutorial/Tutorial';//Need to study the basic
 import {TodoApp} from './TodoApp/TodoApp';//Need to study the basic
 import {TabAppOfficial} from './TabAppOfficial/TabAppOfficial';//Need to study the basic
 
+
+// global vars
+var path_to_assents: string ="../assets/";
+
 /*
  * App Component
  * Top Level Component
@@ -21,22 +25,10 @@ import {TabAppOfficial} from './TabAppOfficial/TabAppOfficial';//Need to study t
   providers: [ ...FORM_PROVIDERS ],
   directives: [ ...ROUTER_DIRECTIVES, RouterActive ],
   pipes: [],
-  styles: [`
-    nav ul {
-      display: inline;
-      list-style-type: none;
-      margin: 0;
-      padding: 0;
-      width: 60px;
-    }
-    nav li {
-      display: inline;
-    }
-    nav li.active {
-      background-color: lightgray;
-    }
-  `],
-  template: `
+    styleUrls:[path_to_assents+'css/app.css',path_to_assents+'css/bootstrap.min.css'],
+    encapsulation: ViewEncapsulation.None,//Make all the css for all the Application
+
+    template: `
     <header>
       <nav>
         <h1>Hello {{ name }}</h1>
