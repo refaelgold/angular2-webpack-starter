@@ -7,6 +7,11 @@ import {RouteConfig, Router} from 'angular2/router';
 import {Home} from './home';
 import {AppState} from './app.service';
 import {RouterActive} from './router-active';
+import {Tutorial} from './Tutorial/Tutorial';//Need to study the basic
+import {TodoApp} from './TodoApp/TodoApp';//Need to study the basic
+import {Ngbook2} from './Ngbook2/Ngbook2';//Need to study the basic
+import {TabAppOfficial} from './TabAppOfficial/TabAppOfficial';//Need to study the basic
+
 
 /*
  * App Component
@@ -49,6 +54,18 @@ import {RouterActive} from './router-active';
           <li router-active>
             <a [routerLink]=" ['About'] ">About</a>
           </li>
+          <li router-active>
+            <a [routerLink]=" ['Tutorial'] ">Tutorial</a>
+          </li>
+          <li router-active>
+            <a [routerLink]=" ['TabAppOfficial'] ">TabAppOfficial</a>
+          </li>
+          <li router-active>
+            <a [routerLink]=" ['TodoApp'] ">TodoApp</a>
+          </li>
+          <li router-active>
+            <a [routerLink]=" ['Ngbook2'] ">Ngbook2</a>
+          </li>
         </ul>
       </nav>
     </header>
@@ -70,6 +87,10 @@ import {RouterActive} from './router-active';
 @RouteConfig([
   { path: '/',      name: 'Index', component: Home, useAsDefault: true },
   { path: '/home',  name: 'Home',  component: Home },
+  { path: '/TodoApp',  name: 'TodoApp',  component: TodoApp },
+  { path: '/Tutorial',  name: 'Tutorial',  component: Tutorial },
+  { path: '/Ngbook2',  name: 'Ngbook2',  component: Ngbook2 },
+  { path: '/TabAppOfficial',  name: 'TabAppOfficial',  component: TabAppOfficial },
   // Async load a component using Webpack's require with es6-promise-loader and webpack `require`
   { path: '/about', name: 'About', loader: () => require('es6-promise!./about')('About') },
 ])
