@@ -1,21 +1,17 @@
 import {
-  it,
+  beforeEachProviders,
   inject,
   injectAsync,
-  beforeEachProviders,
-  TestComponentBuilder
-} from 'angular2/testing';
-
-import {WebpackState} from 'angular2-hmr';
+  it
+} from '@angular/core/testing';
 
 // Load the implementations that should be tested
-import {App} from './app.component';
-import {AppState} from './app.service';
+import { App } from './app.component';
+import { AppState } from './app.service';
 
 describe('App', () => {
   // provide our implementations or mocks to the dependency injector
   beforeEachProviders(() => [
-    WebpackState,
     AppState,
     App
   ]);

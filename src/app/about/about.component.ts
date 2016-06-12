@@ -1,4 +1,4 @@
-import {Component} from 'angular2/core';
+import { Component } from '@angular/core';
 
 /*
  * We're loading this component asynchronously
@@ -11,14 +11,18 @@ console.log('`About` component loaded asynchronously');
 @Component({
   selector: 'about',
   styles: [`
-    h1 {
-      font-family: Arial, Helvetica, sans-serif
-    }
   `],
   template: `
-    <h1>
-      patrick@AngularClass.com
-    </h1>
+    <h1>About</h1>
+    <div>
+      For hot module reloading run
+      <pre>npm run start:hmr</pre>
+    </div>
+    <div>
+      <h3>
+        patrick@AngularClass.com
+      </h3>
+    </div>
   `
 })
 export class About {
