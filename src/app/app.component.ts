@@ -13,6 +13,9 @@ import {Ngbook2} from './Ngbook2/Ngbook2';//Need to study the basic
 import {TabAppOfficial} from './TabAppOfficial/TabAppOfficial';//Need to study the basic
 
 
+import {MagentoApp} from './MagentoApp/MagentoApp.component';//Magento Application
+
+
 /*
  * App Component
  * Top Level Component
@@ -66,6 +69,9 @@ import {TabAppOfficial} from './TabAppOfficial/TabAppOfficial';//Need to study t
           <li router-active>
             <a [routerLink]=" ['Ngbook2'] ">Ngbook2</a>
           </li>
+          <li router-active>
+            <a [routerLink]=" ['MagentoApp'] ">Magento App</a>
+          </li>
         </ul>
       </nav>
     </header>
@@ -91,6 +97,7 @@ import {TabAppOfficial} from './TabAppOfficial/TabAppOfficial';//Need to study t
   { path: '/Tutorial',  name: 'Tutorial',  component: Tutorial },
   { path: '/Ngbook2',  name: 'Ngbook2',  component: Ngbook2 },
   { path: '/TabAppOfficial',  name: 'TabAppOfficial',  component: TabAppOfficial },
+  { path: '/MagentoApp',  name: 'MagentoApp',  component: MagentoApp },
   // Async load a component using Webpack's require with es6-promise-loader and webpack `require`
   { path: '/about', name: 'About', loader: () => require('es6-promise!./about')('About') },
 ])
