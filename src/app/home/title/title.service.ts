@@ -1,20 +1,21 @@
 import {Injectable} from 'angular2/core';
-import {Http} from 'angular2/http';
 
 @Injectable()
-export class Title {
-  value = 'Angular 2';
-  constructor(public http: Http) {
+export class Article {
+  votes: number;
+  title: string;
+  link: string;
 
+  constructor() {
+    this.title = 'Angular 2';
+    this.link = 'http://angular.io';
+    this.votes = 10;
   }
-
-  getData() {
-    console.log('Title#getData(): Get Data');
-    // return this.http.get('/assets/data.json')
-    // .map(res => res.json());
-    return {
-      value: 'AngularClass'
-    };
+  voteUp() {
+    this.votes += 1;
+  }
+  voteDown() {
+    this.votes -= 1;
   }
 
 }
