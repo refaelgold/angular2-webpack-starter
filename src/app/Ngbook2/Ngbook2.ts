@@ -1,5 +1,4 @@
 import {Component} from 'angular2/core';
-import {FORM_DIRECTIVES} from 'angular2/common';
 
 
 
@@ -12,7 +11,6 @@ import {FORM_DIRECTIVES} from 'angular2/common';
   // We need to tell Angular's compiler which directives are in our template.
   // Doing so will allow Angular to attach our behavior to an element
   directives: [
-    ...FORM_DIRECTIVES
   ],
   // We need to tell Angular's compiler which custom pipes are in our template.
   pipes: [ ],

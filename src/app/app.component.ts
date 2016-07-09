@@ -7,7 +7,7 @@ import {RouteConfig, Router} from 'angular2/router';
 import {Home} from './home';
 import {AppState} from './app.service';
 import {RouterActive} from './router-active';
-import {Tutorial} from './Tutorial/Tutorial';//Need to study the basic
+// import {Tutorial} from './Tutorial/Tutorial';//Need to study the basic
 import {TodoApp} from './TodoApp/TodoApp';//Need to study the basic
 import {Ngbook2} from './Ngbook2/Ngbook2';//Need to study the basic
 import {TabAppOfficial} from './TabAppOfficial/TabAppOfficial';//Need to study the basic
@@ -54,9 +54,9 @@ import {TabAppOfficial} from './TabAppOfficial/TabAppOfficial';//Need to study t
           <li router-active>
             <a [routerLink]=" ['About'] ">About</a>
           </li>
-          <li router-active>
-            <a [routerLink]=" ['Tutorial'] ">Tutorial</a>
-          </li>
+          <!--<li router-active>-->
+            <!--<a [routerLink]=" ['Tutorial'] ">Tutorial</a>-->
+          <!--</li>-->
           <li router-active>
             <a [routerLink]=" ['TabAppOfficial'] ">TabAppOfficial</a>
           </li>
@@ -74,21 +74,23 @@ import {TabAppOfficial} from './TabAppOfficial/TabAppOfficial';//Need to study t
       <router-outlet></router-outlet>
     </main>
 
+    <pre class="app-state">this.appState.state = {{ appState.state | json }}</pre>
+
     <footer>
-      WebPack Angular 2 Starter by <a [href]="url">@AngularClass</a>
+      <span>WebPack Angular 2 Starter by <a [href]="url">@AngularClass</a></span>
       <div>
-        <img [src]="angularclassLogo" width="10%">
+        <a [href]="url">
+          <img [src]="angularclassLogo" width="25%">
+        </a>
       </div>
     </footer>
-
-    <pre>this.appState.state = {{ appState.state | json }}</pre>
   `
 })
 @RouteConfig([
   { path: '/',      name: 'Index', component: Home, useAsDefault: true },
   { path: '/home',  name: 'Home',  component: Home },
   { path: '/TodoApp',  name: 'TodoApp',  component: TodoApp },
-  { path: '/Tutorial',  name: 'Tutorial',  component: Tutorial },
+  // { path: '/Tutorial',  name: 'Tutorial',  component: Tutorial },
   { path: '/Ngbook2',  name: 'Ngbook2',  component: Ngbook2 },
   { path: '/TabAppOfficial',  name: 'TabAppOfficial',  component: TabAppOfficial },
   // Async load a component using Webpack's require with es6-promise-loader and webpack `require`
@@ -99,7 +101,10 @@ export class App {
   name = 'Angular 2 Webpack Starter';
   url = 'https://twitter.com/AngularClass';
 
-  constructor(public appState: AppState) {}
+  constructor(
+      public appState: AppState) {
+
+  }
 
   ngOnInit() {
     console.log('Initial App State', this.appState.state);
