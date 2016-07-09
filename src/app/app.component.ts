@@ -10,8 +10,9 @@ import {RouterActive} from './router-active';
 // import {Tutorial} from './Tutorial/Tutorial';//Need to study the basic
 import {TodoApp} from './TodoApp/TodoApp';//Need to study the basic
 import {Ngbook2} from './Ngbook2/Ngbook2';//Need to study the basic
+import {RedditApp} from './RedditApp/RedditApp';//Need to study the basic
 import {TabAppOfficial} from './TabAppOfficial/TabAppOfficial';//Need to study the basic
-
+import {NGAfterHours} from './NGAfterHours/NGAfterHours';
 
 /*
  * App Component
@@ -66,6 +67,12 @@ import {TabAppOfficial} from './TabAppOfficial/TabAppOfficial';//Need to study t
           <li router-active>
             <a [routerLink]=" ['Ngbook2'] ">Ngbook2</a>
           </li>
+          <li router-active>
+            <a [routerLink]=" ['RedditApp'] ">Reddit App</a>
+          </li>
+          <li router-active>
+            <a [routerLink]=" ['NGAfterHours'] ">NGAfterHours App</a>
+          </li>
         </ul>
       </nav>
     </header>
@@ -92,7 +99,9 @@ import {TabAppOfficial} from './TabAppOfficial/TabAppOfficial';//Need to study t
   { path: '/TodoApp',  name: 'TodoApp',  component: TodoApp },
   // { path: '/Tutorial',  name: 'Tutorial',  component: Tutorial },
   { path: '/Ngbook2',  name: 'Ngbook2',  component: Ngbook2 },
+  { path: '/RedditApp',  name: 'RedditApp',  component: RedditApp },
   { path: '/TabAppOfficial',  name: 'TabAppOfficial',  component: TabAppOfficial },
+  { path: '/NGAfterHours',  name: 'NGAfterHours',  component: NGAfterHours },
   // Async load a component using Webpack's require with es6-promise-loader and webpack `require`
   { path: '/about', name: 'About', loader: () => require('es6-promise!./about')('About') },
 ])
