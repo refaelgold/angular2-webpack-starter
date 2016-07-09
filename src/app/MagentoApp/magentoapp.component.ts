@@ -21,47 +21,24 @@ console.log('`Magento App` component loaded asynchronously');
   `],
   template: `
     <div>
-        <!--<h1>MagentoApp</h1>-->
-        <!--<button (click)="onTestGet()">test GET request</button>-->
-        <!--<p>output:{{getData}}</p>-->
-        <!--<button (click)="onTestPost()">test POST request</button>-->
-        <!--<p>output:{{postData}}</p>-->
-
         <button (click)="getAllM2Products()">Get All Magento Prodcuts</button>
         <p>output:{{getAllM2ProductsData}}</p>
-
+        <h1>test</h1>
+        <div class="row">
+        <!--<li *ngFor="let menu of data">-->
+          <!--hello, {{menu}}-->
+        <!--</li>-->
     </div>
+    
   `
+
 })
 export class MagentoApp {
 
-  // getData:string;
-  // postData:string;
+
   getAllM2ProductsData:string;
 
-
   constructor(private _HttpService:Magento2 ) {}
-
-
-
-  // onTestGet(){
-  //   this._HttpService.getCurrentTime()
-  //       .subscribe(
-  //           data=>this.getData=JSON.stringify(data),
-  //           error=>alert(error),
-  //           ()=>console.log("finished")
-  //       )
-  // }
-  //
-  // onTestPost(){
-  //   this._HttpService.postJson()
-  //       .subscribe(
-  //           data=>this.postData=JSON.stringify(data),
-  //           error=>alert(error),
-  //           ()=>console.log("finished")
-  //       )
-  // }
-
 
   getAllM2Products(){
     this._HttpService.getAllM2Products()
@@ -71,7 +48,6 @@ export class MagentoApp {
             ()=>console.log("finished")
         )
   }
-
 
 
 
